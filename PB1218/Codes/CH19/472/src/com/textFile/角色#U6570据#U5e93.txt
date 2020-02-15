@@ -1,0 +1,19 @@
+角色表：
+RoleCode        varchar 2       1(角色代码)
+RoleName        varchar 20      0(角色名称)
+
+操作员表：
+OperatorCode	varchar	20	1(操作员代码)
+OperatorName	varchar	8	0(操作员姓名)
+RoleCode        varchar 2       0(角色代码)
+Password	varchar	50	0(操作密码)
+IsFlag	        char	1	0(是否管理员)
+
+模块表：
+ModuleCode	varchar	3	1(模块代码)
+ModuleName	varchar	20	0(模块名称)
+
+权限分配表：
+RoleCode	varchar	2	1(角色代码)
+ModuleCode	varchar	3	1(模块代码)
+IsEnabled	char	1	0(是否有权限)

@@ -1,0 +1,15 @@
+经验技巧2：
+Font字体对象可以调用deriveFont()方法改变字体的样式与大小，从而获取新的Font对象，不用重新创建字体对象。
+
+方法声明：
+public Font deriveFont(float size)
+功能：通过复制当前 Font 对象并应用新的大小，创建一个新 Font 对象。 
+参数：  
+size - 新 Font 的大小。 
+返回：
+新 Font 对象。
+
+如果方法的参数是int类型，将改变字体的样式。
+由于方法返回的也是Font类型，所以可以连续调用，同时修改字体的样式与大小。例如：
+
+kaitiFont.deriveFont(16f).deriveFont(Font.BOLD)

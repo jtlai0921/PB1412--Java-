@@ -1,0 +1,146 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x774c47c5, pid=3300, tid=3760
+#
+# JRE version: 6.0_17-b04
+# Java VM: Java HotSpot(TM) Client VM (14.3-b01 mixed mode, sharing windows-x86 )
+# Problematic frame:
+# C  [ntdll.dll+0x347c5]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x01ac9000):  JavaThread "main" [_thread_in_native, id=3760, stack(0x003b0000,0x00400000)]
+
+siginfo: ExceptionCode=0xc0000005, writing address 0x01250000
+
+Registers:
+EAX=0x00000000, EBX=0x003ff174, ECX=0x00000001, EDX=0x00000000
+ESP=0x003feff4, EBP=0x003ff028, ESI=0x75d5b20c, EDI=0x01250000
+EIP=0x774c47c5, EFLAGS=0x00010202
+
+Top of Stack: (sp=0x003feff4)
+0x003feff4:   003ff070 759e321c 01250000 00000000
+0x003ff004:   00000004 00000001 75d56840 001ffca4
+0x003ff014:   00000000 75d56892 00000000 00000007
+0x003ff024:   476cf044 003ff444 75a556cf 003ff170
+0x003ff034:   3489d39e 00000000 003ff768 00000000
+0x003ff044:   00000000 77207190 00217260 00202048
+0x003ff054:   00000006 003ff06c 00000000 23873778
+0x003ff064:   77207190 00000000 00000000 003ff044 
+
+Instructions: (pc=0x774c47c5)
+0x774c47b5:   c8 c1 e0 10 03 c1 8b ca 83 e2 03 c1 e9 02 74 06
+0x774c47c5:   f3 ab 85 d2 74 0a 88 07 83 c7 01 83 ea 01 75 f6 
+
+
+Stack: [0x003b0000,0x00400000],  sp=0x003feff4,  free space=315k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [ntdll.dll+0x347c5]
+C  [RPCRT4.dll+0x956cf]
+C  [OLEAUT32.dll+0x34307]
+C  [OLEAUT32.dll+0x342d4]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  com.jacob.com.Dispatch.invokev(Ljava/lang/Object;Ljava/lang/String;III[Lcom/jacob/com/Variant;[I)Lcom/jacob/com/Variant;+0
+j  com.jacob.activeX.ActiveXComponent.getProperty(Ljava/lang/String;)Lcom/jacob/com/Variant;+39
+j  WordBean.<init>()V+60
+j  WordBean.main([Ljava/lang/String;)V+4
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x019cd800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=2264, stack(0x03d30000,0x03d80000)]
+  0x019bd400 JavaThread "CompilerThread0" daemon [_thread_blocked, id=1440, stack(0x03ce0000,0x03d30000)]
+  0x019bc400 JavaThread "Attach Listener" daemon [_thread_blocked, id=2060, stack(0x03c90000,0x03ce0000)]
+  0x019b9c00 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=3204, stack(0x03c40000,0x03c90000)]
+  0x01976000 JavaThread "Finalizer" daemon [_thread_blocked, id=1024, stack(0x03bf0000,0x03c40000)]
+  0x01971800 JavaThread "Reference Handler" daemon [_thread_blocked, id=3844, stack(0x03ba0000,0x03bf0000)]
+=>0x01ac9000 JavaThread "main" [_thread_in_native, id=3760, stack(0x003b0000,0x00400000)]
+
+Other Threads:
+  0x01970000 VMThread [stack: 0x03b50000,0x03ba0000] [id=1656]
+  0x019ce400 WatcherThread [stack: 0x03d80000,0x03dd0000] [id=932]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 960K, used 535K [0x237f0000, 0x238f0000, 0x23cd0000)
+  eden space 896K,  59% used [0x237f0000, 0x23875ec0, 0x238d0000)
+  from space 64K,   0% used [0x238d0000, 0x238d0000, 0x238e0000)
+  to   space 64K,   0% used [0x238e0000, 0x238e0000, 0x238f0000)
+ tenured generation   total 4096K, used 0K [0x23cd0000, 0x240d0000, 0x277f0000)
+   the space 4096K,   0% used [0x23cd0000, 0x23cd0000, 0x23cd0200, 0x240d0000)
+ compacting perm gen  total 12288K, used 488K [0x277f0000, 0x283f0000, 0x2b7f0000)
+   the space 12288K,   3% used [0x277f0000, 0x2786a000, 0x2786a000, 0x283f0000)
+    ro space 8192K,  63% used [0x2b7f0000, 0x2bd08b20, 0x2bd08c00, 0x2bff0000)
+    rw space 12288K,  53% used [0x2bff0000, 0x2c665138, 0x2c665200, 0x2cbf0000)
+
+Dynamic libraries:
+0x00400000 - 0x00424000 	D:\Program Files\Java\jre6\bin\javaw.exe
+0x77490000 - 0x775cc000 	C:\Windows\SYSTEM32\ntdll.dll
+0x76fe0000 - 0x770b4000 	C:\Windows\system32\kernel32.dll
+0x75780000 - 0x757ca000 	C:\Windows\system32\KERNELBASE.dll
+0x77220000 - 0x772c0000 	C:\Windows\system32\ADVAPI32.dll
+0x75910000 - 0x759bc000 	C:\Windows\system32\msvcrt.dll
+0x77640000 - 0x77659000 	C:\Windows\SYSTEM32\sechost.dll
+0x759c0000 - 0x75a61000 	C:\Windows\system32\RPCRT4.dll
+0x772c0000 - 0x77389000 	C:\Windows\system32\USER32.dll
+0x75e40000 - 0x75e8e000 	C:\Windows\system32\GDI32.dll
+0x75f20000 - 0x75f2a000 	C:\Windows\system32\LPK.dll
+0x762f0000 - 0x7638d000 	C:\Windows\system32\USP10.dll
+0x77620000 - 0x7763f000 	C:\Windows\system32\IMM32.DLL
+0x75c70000 - 0x75d3c000 	C:\Windows\system32\MSCTF.dll
+0x7c340000 - 0x7c396000 	D:\Program Files\Java\jre6\bin\msvcr71.dll
+0x6d800000 - 0x6da8b000 	D:\Program Files\Java\jre6\bin\client\jvm.dll
+0x73990000 - 0x739c2000 	C:\Windows\system32\WINMM.dll
+0x754e0000 - 0x7552b000 	C:\Windows\system32\apphelp.dll
+0x6d7b0000 - 0x6d7bc000 	D:\Program Files\Java\jre6\bin\verify.dll
+0x6d330000 - 0x6d34f000 	D:\Program Files\Java\jre6\bin\java.dll
+0x6d290000 - 0x6d298000 	D:\Program Files\Java\jre6\bin\hpi.dll
+0x75e90000 - 0x75e95000 	C:\Windows\system32\PSAPI.DLL
+0x6d7f0000 - 0x6d7ff000 	D:\Program Files\Java\jre6\bin\zip.dll
+0x10000000 - 0x10018000 	D:\Program Files\Java\jre6\bin\jacob.dll
+0x75d50000 - 0x75ddf000 	C:\Windows\system32\OLEAUT32.dll
+0x770c0000 - 0x7721c000 	C:\Windows\system32\ole32.dll
+0x75560000 - 0x7556c000 	C:\Windows\system32\CRYPTBASE.dll
+0x75f30000 - 0x75fb3000 	C:\Windows\system32\CLBCatQ.DLL
+0x75060000 - 0x75076000 	C:\Windows\system32\CRYPTSP.dll
+0x74e00000 - 0x74e3b000 	C:\Windows\system32\rsaenh.dll
+0x755d0000 - 0x755de000 	C:\Windows\system32\RpcRtRemote.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=GBK 
+java_command: WordBean
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:/Program Files/Java/jdk1.6.0_17/bin/../jre/bin/client;C:/Program Files/Java/jdk1.6.0_17/bin/../jre/bin;C:\Program Files\Java\jdk1.6.0_17\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft SQL Server\80\Tools\BINN
+USERNAME=Administrator
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 15 Stepping 13, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 Build 7600 
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 15 stepping 13, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3
+
+Memory: 4k page, physical 2087416k(1049148k free), swap 4174832k(3012268k free)
+
+vm_info: Java HotSpot(TM) Client VM (14.3-b01) for windows-x86 JRE (1.6.0_17-b04), built on Oct 11 2009 00:52:06 by "java_re" with MS VC++ 7.1
+
+time: Fri May 28 13:11:52 2010
+elapsed time: 1 seconds
+
